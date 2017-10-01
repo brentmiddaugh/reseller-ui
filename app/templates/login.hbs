@@ -1,19 +1,17 @@
 <div class="login--grid">
   <form {{action 'authenticate' on='submit'}} class="login--form">
     {{#if errorMessage}}
-      <p>{{errorMessage.errors}}</p>
+      <span class="login--error">{{errorMessage.errors}}</span>
     {{/if}}
 
     <div class="form-group">
-      <label for="identification">Login</label>
-      {{input id='identification' placeholder='Enter Login' value=identification class="form-control"}}
+      {{input id='identification' placeholder='Email' value=identification class="form-control"}}
     </div>
 
     <div class="form-group">
-      <label for="password">Password</label>
-      {{input id='password' placeholder='Enter Password' type='password' value=password class="form-control"}}
+      {{input id='password' placeholder='Password' type='password' value=password class="form-control"}}
     </div>
 
-    <button id="submit" type="submit" class="btn btn-primary">Login</button>
+    <button id="submit" type="submit" class="btn btn-block login--submit">Login</button>
   </form>
 </div>

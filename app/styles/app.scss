@@ -1,13 +1,34 @@
-.login--grid {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-}
+.login {
+  &--grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.login--form {
-  grid-column: 2;
-  grid-row: 2;
+  &--form {
+    grid-column: 2;
+    grid-row: 2;
 
-  padding: 10px;
-  border: 1px solid #E0E0E0;
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+  }
+
+  &--submit {
+    position: relative;
+    top: 1px;
+    background: linear-gradient(to bottom, #039BE5, adjust-hue(#039BE5, 20%));
+    border: 0;
+    color: #FFFFFF;
+    box-shadow: 3px 3px #E0E0E0;
+
+    &:hover {
+      top: 0px;
+      box-shadow: 3px 4px #E0E0E0;
+    }
+  }
+
+  &--error {
+    color: red;
+  }
 }
