@@ -11,6 +11,14 @@ test('visiting /login', function(assert) {
   });
 });
 
+test('should redirect to login when visiting index', function(assert) {
+  visit('/');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/login');
+  });
+});
+
 test('should log user in', function(assert) {
   visit('/login');
   fillIn('input#identification', 'joe@joe.test');
