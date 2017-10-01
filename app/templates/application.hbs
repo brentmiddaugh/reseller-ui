@@ -1,8 +1,6 @@
 <div class="menu">
   {{#if session.isAuthenticated}}
     {{currentUser.user.name}} | <button {{action 'invalidateSession'}}>Logout</button>
-  {{else}}
-    {{#link-to 'login'}}Login{{/link-to}}
   {{/if}}
 </div>
 <div class="main">
