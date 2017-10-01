@@ -3,8 +3,8 @@
   {{input id='identification' placeholder='Enter Login' value=identification}}
   <label for="password">Password</label>
   {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
+  <button id="submit" type="submit">Login</button>
   {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
+    <p>{{errorMessage.errors}}</p>
   {{/if}}
 </form>

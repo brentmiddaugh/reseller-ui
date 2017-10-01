@@ -1,8 +1,8 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('controller:login', 'Unit | Controller | login', {
+moduleFor('controller:setup', 'Unit | Controller | setup', {
   // Specify the other units that are required for this test.
-  needs: ['service:session']
+  needs: ['service:currentUser']
 });
 
 // Replace this with your real tests.
