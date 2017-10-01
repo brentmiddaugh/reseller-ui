@@ -26,6 +26,10 @@
       top: 0px;
       box-shadow: 3px 4px #E0E0E0;
     }
+
+    &:active {
+      background: linear-gradient(to bottom, #039BE5, adjust-hue(#039BE5, 20%));
+    }
   }
 
   &--error {
