@@ -1,4 +1,4 @@
-import { Response, faker } from 'ember-cli-mirage';
+import { Response } from 'ember-cli-mirage';
 
 export default function() {
   this.namespace = 'api';
@@ -8,14 +8,10 @@ export default function() {
     const user   = schema.users.findBy({email: params.user.email});
 
     if( user && user.attrs.password == params.user.password) {
-      const token = faker.random.uuid();
-
-      user.update({token: token});
-
       return {
         id: user.attrs.id,
         email: user.attrs.email,
-        token: token
+        token: user.token
       };
     } else {
       return new Response(401, {}, {errors: 'sorry, not sure who you are'});
