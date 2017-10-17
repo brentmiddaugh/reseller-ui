@@ -1,8 +1,13 @@
-<div class="menu">
-  {{#if session.isAuthenticated}}
-    {{currentUser.user.name}} | <button {{action 'invalidateSession'}}>Logout</button>
-  {{/if}}
-</div>
-<div class="main">
+{{#if session.isAuthenticated}}
+<header class="application--header">
+  <div class="application--header-left">
+    mvnokit
+  </div>
+  <div class="application--header-right">
+    {{currentUser.user.name}} | <a href="#" {{action 'invalidateSession'}} >logout</a>
+  </div>
+</header>
+{{/if}}
+<main class="application--main">
   {{outlet}}
-</div>
+</main>

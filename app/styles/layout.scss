@@ -1,0 +1,17 @@
+.application {
+  &--header {
+    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    font-size: 9pt;
+    padding: 3px;
+  }
+  &--header-right {
+    text-align: right;
+  }
+
+  &--main {
+
+  }
+}
