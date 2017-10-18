@@ -1,5 +1,5 @@
 export default function(server) {
-  server.loadFixtures('resellers', 'users');
+  server.loadFixtures('resellers', 'users', 'brands');
   /*
     Seed your development database using your factories.
     This data will not be loaded in your tests.

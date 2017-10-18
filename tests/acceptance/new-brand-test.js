@@ -19,7 +19,7 @@ test('creating new brand', function(assert) {
   click('.button--save');
 
   andThen(function() {
-    assert.equal(currentURL(), '/brands/1');
+    assert.equal(currentURL(), '/brands/3');
   });
 });
 

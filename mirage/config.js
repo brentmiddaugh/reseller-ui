@@ -1,9 +1,18 @@
 import { Response } from 'ember-cli-mirage';
 
 export default function() {
+  this.findUser = function(schema, request) {
+    const auth  = request.requestHeaders['Authorization'].split(',');
+    const token = auth[0].split('=')[1].replace(/"/g,'');
+    return schema.users.findBy({token: token});
+  };
+
   this.namespace = 'api';
 
-  this.get('/brands');
+  this.get('/brands', (schema, request) => {
+    const user = this.findUser(schema, request);
+    return schema.brands.where({resellerId: user.resellerId});
+  });
   this.post('/brands');
   this.get('/brands/:id');
 
@@ -23,9 +32,7 @@ export default function() {
   });
 
   this.get('/users/me', (schema, request) => {
-    const auth  = request.requestHeaders['Authorization'].split(',');
-    const token = auth[0].split('=')[1].replace(/"/g,'');
-    const user  = schema.users.findBy({token: token});
+    const user = this.findUser(schema, request);
 
     return {
       data: {
