@@ -3,6 +3,10 @@ import { Response } from 'ember-cli-mirage';
 export default function() {
   this.namespace = 'api';
 
+  this.get('/brands');
+  this.post('/brands');
+  this.get('/brands/:id');
+
   this.post('/user/session', (schema, request) => {
     const params = JSON.parse(request.requestBody);
     const user   = schema.users.findBy({email: params.user.email});

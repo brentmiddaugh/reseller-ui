@@ -51,4 +51,4 @@ test('should redirect to setup when reseller is in onboarding status', function(
     assert.equal(currentURL(), '/setup');
   });
 
-})
+});
