@@ -1,5 +1,9 @@
-{{#each model as |brand|}}
-  {{brand.name}}
-{{/each}}
+<div class="brands-grid">
+  {{#each model as |brand|}}
+    <div class="card brand-card">
+      <h4 class="card-header">{{link-to brand.name 'brand' brand}}</h4>
+    </div>
+  {{/each}}
+</div>
 
 {{link-to 'New' 'brands.new' class="new-brand-link"}}

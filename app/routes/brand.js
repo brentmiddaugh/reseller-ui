@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Protected from './protected';
 
-export default Ember.Route.extend({
+export default Protected.extend({
 });

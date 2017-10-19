@@ -1,1 +1,9 @@
-{{outlet}}
+<div class="brand">
+  <nav class="brand-nav">
+    <h2>{{model.name}}</h2>
+    {{link-to 'Back' 'brands'}}
+  </nav>
+  <main class="brand-main">
+    {{outlet}}
+  </main>
+</div>

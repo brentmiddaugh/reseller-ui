@@ -15,3 +15,23 @@
 
   }
 }
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.brand {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  &-nav {
+    border-right: 1px solid black;
+    padding: 3px;
+  }
+
+  &-main {
+    padding: 3px;
+  }
+}
