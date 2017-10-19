@@ -12,8 +12,10 @@ test('should redirect to login when visiting /brands/new', function(assert) {
 });
 
 test('creating new brand', function(assert) {
+
+  let user = server.create('user', {resellerId: 1, email: 'test@test.com', token: 'test.token'});
   visit('/brands/new');
-  authenticateSession(this.application);
+  authenticateSession(this.application, {email: user.email, token: user.token});
 
   fillIn('.brand--name', 'New Brand');
   click('.button--save');
@@ -24,8 +26,9 @@ test('creating new brand', function(assert) {
 });
 
 test('canceling new brand', function(assert) {
+  let user = server.create('user', {resellerId: 1, email: 'test@test.com', token: 'test.token'});
   visit('/brands/new');
-  authenticateSession(this.application);
+  authenticateSession(this.application, {email: user.email, token: user.token});
 
   fillIn('.brand--name', 'New Brand');
   click('.button--cancel');
@@ -37,8 +40,9 @@ test('canceling new brand', function(assert) {
 });
 
 test('creating an invalid brand', function(assert) {
+  let user = server.create('user', {resellerId: 1, email: 'test@test.com', token: 'test.token'});
   visit('/brands/new');
-  authenticateSession(this.application);
+  authenticateSession(this.application, {email: user.email, token: user.token});
 
   fillIn('.brand--name', '');
   click('.button--save');
