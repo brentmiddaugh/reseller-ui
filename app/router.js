@@ -18,7 +18,9 @@ Router.map(function() {
       this.route('new');
     });
   });
-  this.route('plan', {path: '/plans/:plan_id'});
+  this.route('plan', {path: '/plans/:plan_id'}, function() {
+    this.route('edit');
+  });
 });
 
 export default Router;

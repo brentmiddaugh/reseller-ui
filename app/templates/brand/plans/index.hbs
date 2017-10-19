@@ -1,7 +1,12 @@
+<h5>Plans</h5>
 <div class="plans-grid">
   {{#each model as |plan|}}
     <div class="plans-card card">
-      {{plan.name}}
+      <div class="card-body">
+        <h4 class="card-title">{{plan.name}}</h4>
+        {{link-to 'View' 'plan' plan class="btn btn-primary"}}
+        {{link-to 'Edit' 'plan.edit' plan class="btn btn-primary"}}
+      </div>
     </div>
   {{/each}}
 </div>
