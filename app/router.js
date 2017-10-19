@@ -12,7 +12,9 @@ Router.map(function() {
   this.route('brands', function() {
     this.route('new');
   });
-  this.route('brand', {path: '/brands/:brand_id'}, function() {});
+  this.route('brand', {path: '/brands/:brand_id'}, function() {
+    this.route('edit');
+  });
 });
 
 export default Router;

@@ -15,6 +15,7 @@ export default function() {
   });
   this.post('/brands');
   this.get('/brands/:id');
+  this.patch('/brands/:id');
 
   this.post('/user/session', (schema, request) => {
     const params = JSON.parse(request.requestBody);
