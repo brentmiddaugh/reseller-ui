@@ -1,0 +1,8 @@
+<div class="plans-grid">
+  {{#each model as |plan|}}
+    <div class="plans-card card">
+      {{plan.name}}
+    </div>
+  {{/each}}
+</div>
+{{link-to 'New Plan' 'brand.plans.new' brand class="btn btn-primary"}}

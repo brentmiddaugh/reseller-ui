@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  name: DS.attr(),
-  plans: DS.hasMany('plan')
+  brand: DS.belongsTo('brand'),
+  name: DS.attr()
 });

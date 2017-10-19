@@ -14,7 +14,11 @@ Router.map(function() {
   });
   this.route('brand', {path: '/brands/:brand_id'}, function() {
     this.route('edit');
+    this.route('plans', function() {
+      this.route('new');
+    });
   });
+  this.route('plan', {path: '/plans/:plan_id'});
 });
 
 export default Router;

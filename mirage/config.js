@@ -17,6 +17,16 @@ export default function() {
   this.get('/brands/:id');
   this.patch('/brands/:id');
 
+  this.get('/brands/:brandId/plans');
+  this.post('/brands/:brandId/plans', (schema, request) => {
+    const params = JSON.parse(request.requestBody);
+    params['brandId'] = request.params.brandId;
+    return schema.plans.create(params);
+  });
+  this.get('/plans/:id');
+  this.patch('/plans/:id');
+
+
   this.post('/user/session', (schema, request) => {
     const params = JSON.parse(request.requestBody);
     const user   = schema.users.findBy({email: params.user.email});
