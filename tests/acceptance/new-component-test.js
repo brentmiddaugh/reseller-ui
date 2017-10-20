@@ -36,8 +36,7 @@ test('canceling new component', function(assert) {
   click('.button--cancel');
 
   andThen(function() {
-    let value = find('.component--name').val();
-    assert.equal('', value);
+    assert.equal(currentURL(), `/brands/${brand.id}/components`);
   });
 });
 

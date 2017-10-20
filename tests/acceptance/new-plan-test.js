@@ -36,8 +36,7 @@ test('canceling new plan', function(assert) {
   click('.button--cancel');
 
   andThen(function() {
-    let value = find('.plan--name').val();
-    assert.equal('', value);
+    assert.equal(currentURL(), `/brands/${brand.id}/plans`);
   });
 });
 

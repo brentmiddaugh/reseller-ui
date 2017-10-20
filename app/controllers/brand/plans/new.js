@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
 
     rollback(changeset) {
       changeset.rollback();
+      this.transitionToRoute('brand.plans', changeset.get('brandId'));
     }
   }
 });
