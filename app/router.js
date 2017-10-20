@@ -17,8 +17,14 @@ Router.map(function() {
     this.route('plans', function() {
       this.route('new');
     });
+    this.route('components', function() {
+      this.route('new');
+    });
   });
   this.route('plan', {path: '/plans/:plan_id'}, function() {
+    this.route('edit');
+  });
+  this.route('component', {path: '/components/:component_id'}, function() {
     this.route('edit');
   });
 });

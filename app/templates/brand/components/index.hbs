@@ -1,0 +1,13 @@
+<h5>Components</h5>
+<div class="components-grid">
+  {{#each model as |component|}}
+    <div class="components-card card">
+      <div class="card-body">
+        <h4 class="card-title">{{component.name}}</h4>
+        {{link-to 'View' 'component' component class="btn btn-primary"}}
+        {{link-to 'Edit' 'component.edit' component class="btn btn-primary"}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{link-to 'New Component' 'brand.components.new' brand class="btn btn-primary"}}
