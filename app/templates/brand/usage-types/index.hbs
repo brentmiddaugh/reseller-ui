@@ -1,0 +1,13 @@
+<h5>Usage Types</h5>
+<div class="usage-types-grid">
+  {{#each model as |usageType|}}
+    <div class="usageTypes-card card">
+      <div class="card-body">
+        <h4 class="card-title">{{usageType.name}}</h4>
+        {{link-to 'View' 'usage-type' usageType class="btn btn-primary"}}
+        {{link-to 'Edit' 'usage-type.edit' usageType class="btn btn-primary"}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{link-to 'New Usage Type' 'brand.usage-types.new' brand class="btn btn-primary"}}

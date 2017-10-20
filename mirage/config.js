@@ -35,6 +35,14 @@ export default function() {
   this.get('/components/:id');
   this.patch('/components/:id');
 
+  this.get('/brands/:brandId/usage_types');
+  this.post('/brands/:brandId/usage_types', (schema, request) => {
+    const params = JSON.parse(request.requestBody);
+    params['brandId'] = request.params.brandId;
+    return schema.usageTypes.create(params);
+  });
+  this.get('/usage_types/:id');
+  this.patch('/usage_types/:id');
 
   this.post('/user/session', (schema, request) => {
     const params = JSON.parse(request.requestBody);

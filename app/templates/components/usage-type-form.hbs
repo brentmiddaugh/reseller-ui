@@ -1,0 +1,15 @@
+<form>
+  <div class="form-group">
+    <label>Name</label>
+    {{input value=changeset.name class="usage-type--name form-control"}}
+    {{#if (get changeset.error 'name')}}
+      {{#each (get (get changeset.error 'name') 'validation') as |error|}}
+        <div class="usage-type--name-error">{{error}}</div>
+      {{/each}}
+    {{/if}}
+  </div>
+
+  <button class="btn btn-outline-primary button--save" {{action save changeset}}>Save</button>
+  <button class="btn btn-outline-warning button--cancel" {{action rollback changeset}}>Cancel</button>
+
+</form>
