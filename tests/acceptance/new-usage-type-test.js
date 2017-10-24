@@ -22,7 +22,7 @@ test('creating new usage-type', function(assert) {
   click('.button--save');
 
   andThen(function() {
-    assert.equal(currentURL(), '/usage-types/1');
+    assert.equal(currentURL(), '/usage-types/7');
   });
 });
 

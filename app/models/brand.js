@@ -4,5 +4,5 @@ export default DS.Model.extend({
   name: DS.attr(),
   plans: DS.hasMany('plan'),
   components: DS.hasMany('component'),
-  usageTypes: DS.hasMany('usageType')
+  usageTypes: DS.hasMany('usage-type')
 });
