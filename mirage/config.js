@@ -18,6 +18,25 @@ export default function() {
   this.patch('/brands/:id');
 
   this.get('/brands/:brandId/plans');
+  this.get('/brands/:brandId/plans/default', (schema, request) => {
+    return {
+      name: 'Untitled',
+      planComponentGroups: [
+        {
+          name: 'Voice',
+          constraint: 'disabled',
+          planComponents: [
+            {component: {id: 1, name: 'Voice 100'}, constraint: 'disabled'},
+            {component: {id: 2, name: 'Voice 200'}, constraint: 'disabled'},
+            {component: {id: 3, name: 'Voice 300'}, constraint: 'disabled'}
+          ]
+        },
+        {name: 'SMS', constraint: 'disabled', planComponents: []},
+        {name: 'Data', constraint: 'disabled', planComponents: []}
+      ]
+
+    };
+  });
   this.post('/brands/:brandId/plans', (schema, request) => {
     const params = JSON.parse(request.requestBody);
     params['brandId'] = request.params.brandId;

@@ -9,7 +9,10 @@
     {{/if}}
   </div>
 
+  {{#each changeset.planComponentGroups as |group|}}
+    {{plan-component-group-editor planComponentGroup=group}}
+  {{/each}}
+
   <button class="btn btn-outline-primary button--save" {{action save changeset}}>Save</button>
   <button class="btn btn-outline-warning button--cancel" {{action rollback changeset}}>Cancel</button>
-
 </form>

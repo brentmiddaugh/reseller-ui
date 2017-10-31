@@ -1,0 +1,33 @@
+<div>
+  {{model.component.name}}
+</div>
+<button {{action "edit"}} class="btn btn-outline-primary btn-sm">Edit</button>
+
+{{#if isEditing}}
+  <div class="plan-component-editor-modal">
+    <div class="plan-component-editor-modal-content">
+      <header>
+        <h4>{{model.component.name}}</h4>
+        <div class="constraint-buttons">
+          {{x-button-group options=constraintOptions value=model.constraint onClick=(action "setConstraint" )}}
+        </div>
+      </header>
+
+      <div class="form-group">
+        <label>Price Precision</label>
+        <select class="form-control"><option>$0.01</option><option>$0.001</option></select>
+      </div>
+
+      <div class="form-group">
+        <label>Price</label>
+        {{input type="number" value=model.extraPrice step=0.00001 class="form-control"}}
+      </div>
+      <div>rules</div>
+      <div>alerts</div>
+      <footer>
+        <button {{action "save"}} class="btn btn-primary">Save</button>
+        <button {{action "cancel"}} class="btn btn-danger">Cancel</button>
+      </footer>
+    </div>
+  </div>
+{{/if}}

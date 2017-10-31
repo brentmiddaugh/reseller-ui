@@ -22,7 +22,7 @@ test('creating new component', function(assert) {
   click('.button--save');
 
   andThen(function() {
-    assert.equal(currentURL(), '/components/1');
+    assert.equal(currentURL(), '/components/10');
   });
 });
 

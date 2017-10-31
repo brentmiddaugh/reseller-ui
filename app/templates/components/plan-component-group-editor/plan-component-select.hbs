@@ -1,0 +1,5 @@
+<div><button {{action "prev"}} disabled={{prevBtnDisabled}}>Prev</button></div>
+{{#each planComponentsToDisplay as |planComponent|}}
+  <div>{{plan-component-group-editor/plan-component-editor model=(changeset planComponent )}}</div>
+{{/each}}
+<div><button {{action "next"}} disabled={{nextBtnDisabled}}>Next</button></div>

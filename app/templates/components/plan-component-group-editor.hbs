@@ -1,0 +1,8 @@
+<header>
+  <h5>{{planComponentGroup.name}}</h5>
+  <div class="constraint-buttons">
+    {{x-button-group options=constraintOptions value=planComponentGroup.constraint onClick=(action "setConstraint" )}}
+  </div>
+</header>
+
+{{plan-component-group-editor/plan-component-select planComponents=planComponentGroup.planComponents}}
