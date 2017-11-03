@@ -10,7 +10,7 @@
   </div>
 
   {{#each changeset.planComponentGroups as |group|}}
-    {{plan-component-group-editor planComponentGroup=group}}
+    {{plan-component-group-editor model=group}}
   {{/each}}
 
   <button class="btn btn-outline-primary button--save" {{action save changeset}}>Save</button>

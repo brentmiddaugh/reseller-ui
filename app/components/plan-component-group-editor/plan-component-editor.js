@@ -3,12 +3,21 @@ import { computed } from '@ember/object';
 
 export default Ember.Component.extend({
   classNames: 'plan-component-editor',
+  classNameBindings: ['isDefault', 'isOption'],
 
   constraintOptions: {
     'Default': 'default',
     'Option': 'option',
     'Disabled': 'disabled'
   },
+
+  isDefault: computed('model.constraint', function() {
+    return this.get('model.constraint') === 'default';
+  }),
+
+  isOption: computed('model.constraint', function() {
+    return this.get('model.constraint') === 'option';
+  }),
 
   actions: {
     edit() {
